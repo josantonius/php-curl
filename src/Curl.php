@@ -10,7 +10,7 @@
  * @license    https://opensource.org/licenses/MIT - The MIT License (MIT)
  * @version    1.0.0
  * @link       https://github.com/Josantonius/PHP-Curl
- * @since      File available since 1.0.0 - Update: 2016-12-15
+ * @since      File available since 1.0.0 - Update: 2016-12-19
  */
 
 namespace Josantonius\Curl;
@@ -101,7 +101,7 @@ class Curl {
                 break;
 
             default:
-                throw new CurlException('Parameter type not recognized.', 900);
+                throw new CurlException('Parameter type not recognized.', 600);
                 break;
         }
 
@@ -111,7 +111,7 @@ class Curl {
 
         if (is_null($output) || !$output) {
 
-            throw new CurlException('No response has been received.', 900);
+            throw new CurlException('No response has been received.', 602);
         }
 
         curl_close($init);
