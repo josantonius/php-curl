@@ -27,12 +27,16 @@ class Curl {
     /**
      * Default timeout.
      *
+     * @since 1.0.0
+     *
      * @var int
      */
     private static $_timeout = 30;
 
     /**
      * Useragent default if another is not indicated.
+     *
+     * @since 1.0.0
      *
      * @var string
      */
@@ -42,13 +46,17 @@ class Curl {
     /**
      * Headers default if another is not indicated.
      *
+     * @since 1.0.0
+     *
      * @var array
      */
     private static $_headers = array('Content-Type:text/html');
 
     /**
      * Make request and get response website.
-     * 
+     *
+     * @since 1.0.0
+     *
      * @param  array  $params  
      *         string $params['url']       → the request URL
      *         string $params['referer']   → the referrer URL
@@ -129,6 +137,8 @@ class Curl {
 
     /**
      * Check the protocol site (http | https) and get the current url.
+     *
+     * @since 1.0.0
      *
      * @return string → full url
      */

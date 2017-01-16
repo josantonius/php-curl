@@ -26,6 +26,8 @@ class CurlTest {
 
     /**
      * Get request.
+     *
+     * @since 1.0.0
      */
     public static function testGetRequest() {
 
@@ -39,6 +41,8 @@ class CurlTest {
 
     /**
      * Post request.
+     *
+     * @since 1.0.0
      */
     public static function testPostRequest() {
 
@@ -59,6 +63,8 @@ class CurlTest {
 
     /**
      * Put request.
+     *
+     * @since 1.0.0
      */
     public static function testPutRequest() {
 
@@ -79,6 +85,8 @@ class CurlTest {
 
     /**
      * Delete request.
+     *
+     * @since 1.0.0
      */
     public static function testDeleteRequest() {
 
@@ -99,6 +107,8 @@ class CurlTest {
 
     /**
      * Response error.
+     *
+     * @since 1.0.0
      */
     public static function testResponseError() {
 
@@ -112,6 +122,8 @@ class CurlTest {
 
     /**
      * Response error.
+     *
+     * @since 1.0.0
      */
     public static function testUnknownTypeError() {
 
