@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php
 /**
  * API Requests using the HTTP protocol through the Curl library.
  * 
@@ -8,9 +8,9 @@
  * @author     Josantonius - info@josantonius.com
  * @copyright  Copyright (c) 2016 JST PHP Framework
  * @license    https://opensource.org/licenses/MIT - The MIT License (MIT)
- * @version    1.0.0
+ * @version    1.1.0
  * @link       https://github.com/Josantonius/PHP-Curl
- * @since      File available since 1.0.0 - Update: 2016-12-19
+ * @since      File available since 1.0.0 - Update: 2017-01-30
  */
 
 namespace Josantonius\Curl;
@@ -72,18 +72,22 @@ class Curl {
      * @throws CurlException  → no response has been received
      * @return array|object   → response
      */
-    public static function request(array $params, string $results = 'array') {
+    public static function request($params, $results = 'array') {
 
         $init = curl_init($params['url']);
 
-        $params['data'] = $params['data'] ?? "";
+        $data    = isset($params['data'])       ? $params['data']      : "";
+        $referer = isset($params['referer']))   ? $params['referer']   : self::getUrl();
+        $timeout = isset($params['timeout']))   ? $params['timeout']   : self::$_timeout;
+        $agent   = isset($params['useragent'])) ? $params['useragent'] : self::$_useragent;
+        $headers = isset($params['headers']))   ? $params['headers']   : self::$_headers;
 
         $curl = [
             CURLOPT_VERBOSE        => true, 
-            CURLOPT_REFERER        => $params['referer']   ?? self::getUrl(),
-            CURLOPT_TIMEOUT        => $params['timeout']   ?? self::$_timeout,
-            CURLOPT_USERAGENT      => $params['useragent'] ?? self::$_useragent,
-            CURLOPT_HTTPHEADER     => $params['headers']   ?? self::$_headers,
+            CURLOPT_REFERER        => $referer,
+            CURLOPT_TIMEOUT        => $timeout,
+            CURLOPT_USERAGENT      => $agent,
+            CURLOPT_HTTPHEADER     => $headers,
             CURLOPT_RETURNTRANSFER => true,
         ];
 
@@ -95,13 +99,13 @@ class Curl {
          
             case 'post':
                 $curl[CURLOPT_POST]       = true;
-                $curl[CURLOPT_POSTFIELDS] = json_encode($params['data']);
+                $curl[CURLOPT_POSTFIELDS] = json_encode($data);
                 break;
 
             case 'put':
                 $curl[CURLOPT_POST]          = true;
                 $curl[CURLOPT_CUSTOMREQUEST] = 'PUT';
-                $curl[CURLOPT_POSTFIELDS]    = json_encode($params['data']);
+                $curl[CURLOPT_POSTFIELDS]    = json_encode($data);
                 break;
 
             case 'delete':
@@ -142,7 +146,7 @@ class Curl {
      *
      * @return string → full url
      */
-    private static function getUrl(): string {
+    private static function getUrl() {
         
         if (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') {
 

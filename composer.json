@@ -1,6 +1,6 @@
 {
     "name":        "josantonius/curl",
-    "version":     "1.0.0",
+    "version":     "1.1.0",
     "type":        "library",
     "description": "API Requests using the HTTP protocol through the Curl library.",
     "keywords": [
@@ -24,7 +24,7 @@
     "minimum-stability": "dev",
     "prefer-stable" : true,
     "require": {
-        "php" : ">=7.0"
+        "php" : ">=5.6"
     },
     "autoload": {
         "psr-4": {
