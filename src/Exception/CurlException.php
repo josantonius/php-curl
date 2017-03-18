@@ -2,15 +2,11 @@
 /**
  * API Requests using the HTTP protocol through the Curl library.
  * 
- * @category   JST
- * @package    Curl
- * @subpackage CurlException
- * @author     Josantonius - info@josantonius.com
- * @copyright  Copyright (c) 2016 JST PHP Framework
+ * @author     Josantonius - hello@josantonius.com
+ * @copyright  Copyright (c) 2016 - 2017 JST PHP Framework
  * @license    https://opensource.org/licenses/MIT - The MIT License (MIT)
- * @version    1.1.0
  * @link       https://github.com/Josantonius/PHP-Curl
- * @since      File available since 1.0.0 - Update: 2017-01-30
+ * @since      1.0.0
  */
 
 namespace Josantonius\Curl\Exception;
