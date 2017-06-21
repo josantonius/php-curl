@@ -72,11 +72,11 @@ class Curl {
 
         $init = curl_init($params['url']);
 
-        $data    = isset($params['data'])       ? $params['data']      : "";
-        $referer = isset($params['referer']))   ? $params['referer']   : self::getUrl();
-        $timeout = isset($params['timeout']))   ? $params['timeout']   : self::$_timeout;
-        $agent   = isset($params['useragent'])) ? $params['useragent'] : self::$_useragent;
-        $headers = isset($params['headers']))   ? $params['headers']   : self::$_headers;
+        $data    = isset($params['data'])      ? $params['data']      : "";
+        $referer = isset($params['referer'])   ? $params['referer']   : self::getUrl();
+        $timeout = isset($params['timeout'])   ? $params['timeout']   : self::$_timeout;
+        $agent   = isset($params['useragent']) ? $params['useragent'] : self::$_useragent;
+        $headers = isset($params['headers'])   ? $params['headers']   : self::$_headers;
 
         $curl = [
             CURLOPT_VERBOSE        => true, 

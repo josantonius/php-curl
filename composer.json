@@ -1,6 +1,6 @@
 {
     "name":        "josantonius/curl",
-    "version":     "1.1.1",
+    "version":     "1.1.2",
     "type":        "library",
     "description": "API Requests using the HTTP protocol through the Curl library.",
     "keywords": [
