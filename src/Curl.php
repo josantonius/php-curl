@@ -3,7 +3,7 @@
  * API Requests using the HTTP protocol through the Curl library.
  * 
  * @author     Josantonius - hello@josantonius.com
- * @copyright  Copyright (c) 2016 - 2017 JST PHP Framework
+ * @copyright  Copyright (c) 2016 - 2017
  * @license    https://opensource.org/licenses/MIT - The MIT License (MIT)
  * @link       https://github.com/Josantonius/PHP-Curl
  * @since      1.0.0
@@ -72,7 +72,7 @@ class Curl {
 
         $init = curl_init($params['url']);
 
-        $data    = isset($params['data'])      ? $params['data']      : "";
+        $data    = isset($params['data'])      ? $params['data']      : '';
         $referer = isset($params['referer'])   ? $params['referer']   : self::getUrl();
         $timeout = isset($params['timeout'])   ? $params['timeout']   : self::$_timeout;
         $agent   = isset($params['useragent']) ? $params['useragent'] : self::$_useragent;
