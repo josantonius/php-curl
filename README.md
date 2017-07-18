@@ -25,7 +25,7 @@ API Requests using the HTTP protocol through the Curl library.
 <p align="center"><strong>Take a look at the code</strong></p>
 
 <p align="center">
-  <a href="" title="Take a look at the code">
+  <a href="https://youtu.be/Solzcac37F0" title="Take a look at the code">
     <img src="https://raw.githubusercontent.com/Josantonius/PHP-Algorithm/master/resources/youtube-thumbnail.jpg">
   </a>
 </p>

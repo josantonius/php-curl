@@ -4,7 +4,7 @@
 
 [English version](README.md)
 
-Librería PHP para hacer peticiones HTTP a través de CURL. Fácil integración con API REST.
+Biblioteca PHP para hacer peticiones HTTP a través de CURL. Fácil integración con API REST.
 
 ---
 
@@ -25,7 +25,7 @@ Librería PHP para hacer peticiones HTTP a través de CURL. Fácil integración 
 <p align="center"><strong>Echa un vistazo al código</strong></p>
 
 <p align="center">
-  <a href="" title="Echa un vistazo al código">
+  <a href="https://youtu.be/Solzcac37F0" title="Echa un vistazo al código">
     <img src="https://raw.githubusercontent.com/Josantonius/PHP-Algorithm/master/resources/youtube-thumbnail.jpg">
   </a>
 </p>
@@ -54,7 +54,7 @@ Esta biblioteca es soportada por versiones de PHP 5.6 o superiores y es compatib
 
 ### Cómo empezar y ejemplos
 
-Para utilizar esta librería, simplemente:
+Para utilizar esta biblioteca, simplemente:
 
 ```php
 require __DIR__ . '/vendor/autoload.php';
@@ -63,7 +63,7 @@ use Josantonius\Curl\Curl;
 ```
 ### Métodos disponibles
 
-Métodos disponibles en esta librería:
+Métodos disponibles en esta biblioteca:
 
 ```php
 Curl::request();
@@ -71,7 +71,7 @@ Curl::getUrl();
 ```
 ### Uso
 
-Ejemplo de uso para esta librería:
+Ejemplo de uso para esta biblioteca:
 
 ```php
 <?php
@@ -106,7 +106,7 @@ $loader->addPsr4('Josantonius\\Curl\\Tests\\', __DIR__ . '/vendor/josantonius/cu
 
 use Josantonius\Curl\Tests\CurlTest;
 ```
-Métodos de prueba disponibles en esta librería:
+Métodos de prueba disponibles en esta biblioteca:
 
 ```php
 CurlTest::testGetRequest();
@@ -119,7 +119,7 @@ CurlTest::testUnknownTypeError();
 
 ### Manejador de excepciones
 
-Esta librería utiliza [control de excepciones](src/Exception) que puedes personalizar a tu gusto.
+Esta biblioteca utiliza [control de excepciones](src/Exception) que puedes personalizar a tu gusto.
 ### Contribuir
 1. Comprobar si hay incidencias abiertas o abrir una nueva para iniciar una discusión en torno a un fallo o función.
 1. Bifurca la rama del repositorio en GitHub para iniciar la operación de ajuste.
