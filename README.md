@@ -1,6 +1,6 @@
 # PHP Curl library
 
-[![Latest Stable Version](https://poser.pugx.org/josantonius/curl/v/stable)](https://packagist.org/packages/josantonius/curl) [![Total Downloads](https://poser.pugx.org/josantonius/curl/downloads)](https://packagist.org/packages/josantonius/curl) [![Latest Unstable Version](https://poser.pugx.org/josantonius/curl/v/unstable)](https://packagist.org/packages/josantonius/curl) [![License](https://poser.pugx.org/josantonius/curl/license)](https://packagist.org/packages/josantonius/curl)
+[![Latest Stable Version](https://poser.pugx.org/josantonius/curl/v/stable)](https://packagist.org/packages/josantonius/curl) [![Total Downloads](https://poser.pugx.org/josantonius/curl/downloads)](https://packagist.org/packages/josantonius/curl) [![Latest Unstable Version](https://poser.pugx.org/josantonius/curl/v/unstable)](https://packagist.org/packages/josantonius/curl) [![License](https://poser.pugx.org/josantonius/curl/license)](https://packagist.org/packages/josantonius/curl) [![Travis](https://travis-ci.org/Josantonius/PHP-Curl.svg)](https://github.com/Josantonius/PHP-Curl)
 
 [Versión en español](README-ES.md)
 
@@ -61,14 +61,15 @@ require __DIR__ . '/vendor/autoload.php';
 
 use Josantonius\Curl\Curl;
 ```
+
 ### Available Methods
 
 Available methods in this library:
 
 ```php
 Curl::request();
-Curl::getUrl();
 ```
+
 ### Usage
 
 Example of use for this library:
@@ -80,43 +81,32 @@ require __DIR__ . '/vendor/autoload.php';
 use Josantonius\Curl\Curl;
 
 $data = [
-    'url'       => 'https://graph.facebook.com/zuck',
+
     'type'      => 'post',
     'data'      => array('user' => '123456', 'password' => 'xxxxx'),
     'timeout'   => 10,
     'referer'   => 'http://'.$_SERVER['HTTP_HOST'],
     'headers'   => [
+
         'Content-Type:application/json', 
         'Authorization:0kdm3hzmb4h3cf'
     ]
 ];
 
-echo "<pre>"; var_dump(Curl::request($data)); echo "</pre>";
+$response = Curl::request('https://graph.facebook.com/zuck', $data);
+
+echo "<pre>"; var_dump($response); echo "</pre>";
 ```
 
 ### Tests 
 
-To use the [test](tests) class, simply:
+To run [tests](tests/Curl) simply:
 
-```php
-<?php
-$loader = require __DIR__ . '/vendor/autoload.php';
+    $ git clone https://github.com/Josantonius/PHP-Curl.git
+    
+    $ cd PHP-Curl
 
-$loader->addPsr4('Josantonius\\Curl\\Tests\\', __DIR__ . '/vendor/josantonius/curl/tests');
-
-use Josantonius\Curl\Tests\CurlTest;
-
-```
-Available test methods in this library:
-
-```php
-CurlTest::testGetRequest();
-CurlTest::testPostRequest();
-CurlTest::testPutRequest();
-CurlTest::testDeleteRequest();
-CurlTest::testResponseError();
-CurlTest::testUnknownTypeError();
-```
+    $ phpunit
 
 ### Exception Handler
 
