@@ -77,7 +77,7 @@ class Curl {
 
         $response = json_decode($sanitize, $result === 'array');
 
-        return (json_last_error() === JSON_ERROR_NONE) ? $response : false;
+        return ($response && json_last_error() === 0) ? $response : false;
    }
 
     /**
