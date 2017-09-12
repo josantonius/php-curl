@@ -22,23 +22,6 @@ use Josantonius\Curl\Curl,
 final class CurlTest extends TestCase { 
 
     /**
-     * Get the current url.
-     *
-     * @since 1.1.3
-     *
-     * @return void
-     */
-    public function test_getUrl() {
-
-        $private = function() { 
-
-            return self::_getUrl(); // Curl::_getUrl();
-        };
-
-        $this->assertContains('http://site.com', $private->call(new Curl));
-    }
-
-    /**
      * Send GET request and obtain response as array.
      *
      * @since 1.1.3

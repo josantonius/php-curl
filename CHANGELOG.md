@@ -29,7 +29,6 @@
 * Deleted `Josantonius\Curl\Tests\CurlTest::testUnknownTypeError()` method.
 
 * Added `Josantonius\Curl\Test\CurlTest` class.
-* Added `Josantonius\Curl\Test\CurlTest->test_getUrl()` method.
 * Added `Josantonius\Curl\Test\CurlTest->testGetRequestArray()` method.
 * Added `Josantonius\Curl\Test\CurlTest->testGetRequestObject()` method.
 * Added `Josantonius\Curl\Test\CurlTest->testGetRequestWithParamsArray()` method.
