@@ -183,7 +183,7 @@ final class CurlTest extends TestCase {
             ]
         ];
         
-        $this->assertFalse(Curl::request('https://xxx.xxx.com'), $data);
+        $this->assertFalse(Curl::request('https://xxx.xxx.com', $data));
     }
 
     /**
@@ -264,7 +264,7 @@ final class CurlTest extends TestCase {
             ]
         ];
         
-        $this->assertFalse(Curl::request('https://xxx.xxx.com'), $data);
+        $this->assertFalse(Curl::request('https://xxx.xxx.com', $data));
     }
 
     /**
@@ -345,7 +345,7 @@ final class CurlTest extends TestCase {
             ]
         ];
         
-        $this->assertFalse(Curl::request('https://xxx.xxx.com'), $data);
+        $this->assertFalse(Curl::request('https://xxx.xxx.com', $data));
     }
 
     /**
