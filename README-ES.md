@@ -1,6 +1,6 @@
 # PHP Curl library
 
-[![Latest Stable Version](https://poser.pugx.org/josantonius/curl/v/stable)](https://packagist.org/packages/josantonius/curl) [![Total Downloads](https://poser.pugx.org/josantonius/curl/downloads)](https://packagist.org/packages/josantonius/curl) [![Latest Unstable Version](https://poser.pugx.org/josantonius/curl/v/unstable)](https://packagist.org/packages/josantonius/curl) [![License](https://poser.pugx.org/josantonius/curl/license)](https://packagist.org/packages/josantonius/curl) [![Travis](https://travis-ci.org/Josantonius/PHP-Curl.svg)](https://github.com/Josantonius/PHP-Curl)
+[![Latest Stable Version](https://poser.pugx.org/josantonius/curl/v/stable)](https://packagist.org/packages/josantonius/curl) [![Total Downloads](https://poser.pugx.org/josantonius/curl/downloads)](https://packagist.org/packages/josantonius/curl) [![Latest Unstable Version](https://poser.pugx.org/josantonius/curl/v/unstable)](https://packagist.org/packages/josantonius/curl) [![License](https://poser.pugx.org/josantonius/curl/license)](https://packagist.org/packages/josantonius/curl) [![Travis](https://travis-ci.org/Josantonius/PHP-Curl.svg)](https://travis-ci.org/Josantonius/PHP-Curl)
 
 [English version](README.md)
 
@@ -90,7 +90,7 @@ echo "<pre>"; var_dump($response); echo "</pre>";
 
 ### Tests 
 
-Para ejecutar las [pruebas](tests/Curl) simplemente:
+Para ejecutar las [pruebas](tests/Curl/Test) simplemente:
 
     $ git clone https://github.com/Josantonius/PHP-Curl.git
     
