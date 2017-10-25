@@ -9,21 +9,21 @@
          processIsolation="false"
          stopOnFailure="false"
          syntaxCheck="false"
-         bootstrap="tests/bootstrap.php"
->
+         bootstrap="vendor/autoload.php">
+
     <php>
         <server name='HTTPS'     value='' />
         <server name='HTTP_HOST' value='site.com' />
     </php>
     <testsuites>
-        <testsuite name="Curl Test Suite">
-            <directory>tests/Curl</directory>
+        <testsuite name="Test Suite">
+            <directory>tests</directory>
         </testsuite>
     </testsuites>
 
     <filter>
         <whitelist>
-            <directory>src/Curl</directory>
+            <directory>src</directory>
         </whitelist>
     </filter>
 </phpunit>

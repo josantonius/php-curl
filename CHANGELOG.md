@@ -1,5 +1,27 @@
 # CHANGELOG
 
+## 1.1.4 - 2017-10-25
+
+* Implemented `PSR-4 autoloader standard` from all library files.
+
+* Implemented `PSR-2 coding standard` from all library PHP files.
+
+* Implemented `PHPCS` to ensure that PHP code complies with `PSR2` code standards.
+
+* Implemented `Codacy` to automates code reviews and monitors code quality over time.
+
+* Implemented `Codecov` to coverage reports.
+
+* Added `Curl/phpcs.ruleset.xml` file.
+
+* Deleted `Curl/src/bootstrap.php` file.
+
+* Deleted `Curl/tests/bootstrap.php` file.
+
+* Deleted `Curl/vendor` folder.
+
+* Changed `Josantonius\Curl\Test\CurlTest` class to  `Josantonius\Curl\CurlTest` class .
+
 ## 1.1.3 - 2017-09-11
 
 * Unit tests supported by `PHPUnit` were added.
