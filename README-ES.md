@@ -23,15 +23,15 @@ Biblioteca PHP para hacer peticiones HTTP a través de CURL. Fácil integración
 
 ---
 
-### Requisitos
+## Requisitos
 
-Esta clase es soportada por versiones de `PHP 5.6` o superiores y es compatible con versiones de `HHVM 3.0` o superiores.
+Esta clase es soportada por versiones de **PHP 5.6** o superiores y es compatible con versiones de **HHVM 3.0** o superiores.
 
-### Instalación 
+## Instalación 
 
 La mejor forma de instalar esta extensión es a través de [Composer](http://getcomposer.org/download/).
 
-Para instalar `PHP Curl library`, simplemente escribe:
+Para instalar **PHP Curl library**, simplemente escribe:
 
     $ composer require Josantonius/Curl
 
@@ -49,15 +49,15 @@ O **instalarlo manualmente**:
 
     $ wget https://raw.githubusercontent.com/Josantonius/PHP-Curl/master/src/Curl.php
 
-### Métodos disponibles
+## Métodos disponibles
 
 Métodos disponibles en esta biblioteca:
 
-`Realizar petición HTTP:`
+### - Realizar petición HTTP:
 
-```php
+???php
 Curl::request($url, $params, $result);
-```
+???
 
 | Atributo | Descripción | Tipo | Requerido | Predeterminado
 | --- | --- | --- | --- | --- |
@@ -79,65 +79,65 @@ Curl::request($url, $params, $result);
 
 **# Return** (array|object) → respuesta
 
-### Cómo empezar
+## Cómo empezar
 
 Para utilizar esta clase con `Composer`:
 
-```php
+???php
 require __DIR__ . '/vendor/autoload.php';
 
 use Josantonius\Curl\Curl;
-```
+???
 
 Si la instalaste `manualmente`, utiliza:
 
-```php
+???php
 require_once __DIR__ . '/Curl.php';
 
 use Josantonius\Curl\Curl;
-```
+???
 
-### Uso
+## Uso
 
 Ejemplo de uso para esta biblioteca:
 
-**Enviar petición GET y obtener respuesta como array:**
+### - Enviar petición GET y obtener respuesta como array:
 
-```php
+???php
 Curl::request('https://graph.facebook.com/zuck');
-```
+???
 
-**Enviar petición GET y obtener respuesta como objeto:**
+### - Enviar petición GET y obtener respuesta como objeto:
 
-```php
+???php
 Curl::request('https://graph.facebook.com/zuck', false, 'object');
-```
+???
 
-**Enviar petición GET con parámetros y obtener respuesta como array:**
+### - Enviar petición GET con parámetros y obtener respuesta como array:
 
-```php
+???php
 $data = [
     'timeout' => 10,
     'referer' => 'http://site.com',
 ];
         
 Curl::request('https://graph.facebook.com/zuck', $data);
-```
+???
 
-**Enviar petición GET con parámetros y obtener respuesta como objeto:**
+### - Enviar petición GET con parámetros y obtener respuesta como objeto:
 
-```php
+???php
 $data = [
     'timeout' => 10,
     'referer' => 'http://site.com',
 ];
         
 Curl::request('https://graph.facebook.com/zuck', $data, 'object');
-```
+???
 
-**Enviar petición POST y obtener respuesta como array:**
+### - Enviar petición POST y obtener respuesta como array:
 
-```php
+???php
 $data = [
     'type'    => 'post',
     'data'    => array('user' => '123456', 'password' => 'xxxxx'),
@@ -150,11 +150,11 @@ $data = [
 ];
         
 Curl::request('https://graph.facebook.com/zuck', $data);
-```
+???
 
-**Enviar petición POST y obtener respuesta como objeto:**
+### - Enviar petición POST y obtener respuesta como objeto:
 
-```php
+???php
 $data = [
     'type'    => 'post',
     'data'    => array('user' => '123456', 'password' => 'xxxxx'),
@@ -167,11 +167,11 @@ $data = [
 ];
         
 Curl::request('https://graph.facebook.com/zuck', $data, 'object');
-```
+???
 
-**Enviar petición PUT y obtener respuesta como array:**
+### - Enviar petición PUT y obtener respuesta como array:
 
-```php
+???php
 $data = [
     'type'    => 'put',
     'data'    => array('email' => 'new@email.com'),
@@ -184,11 +184,11 @@ $data = [
 ];
         
 Curl::request('https://graph.facebook.com/zuck', $data);
-```
+???
 
-**Enviar petición PUT y obtener respuesta como objeto:**
+### - Enviar petición PUT y obtener respuesta como objeto:
 
-```php
+???php
 $data = [
     'type'    => 'put',
     'data'    => array('email' => 'new@email.com'),
@@ -201,11 +201,11 @@ $data = [
 ];
         
 Curl::request('https://graph.facebook.com/zuck', $data, 'object');
-```
+???
 
-**Enviar petición DELETE y obtener respuesta como array:**
+### - Enviar petición DELETE y obtener respuesta como array:
 
-```php
+???php
 $data = [
 
     'type'    => 'delete',
@@ -219,11 +219,11 @@ $data = [
 ];
         
 Curl::request('https://graph.facebook.com/zuck', $data);
-```
+???
 
-**Enviar petición DELETE y obtener respuesta como objeto:**
+### - Enviar petición DELETE y obtener respuesta como objeto:
 
-```php
+???php
 $data = [
     'type'    => 'delete',
     'data'    => ['userId' => 10],
@@ -236,9 +236,9 @@ $data = [
 ];
         
 Curl::request('https://graph.facebook.com/zuck', $data, 'object');
-```
+???
 
-### Tests 
+## Tests 
 
 Para ejecutar las [pruebas](tests) necesitarás [Composer](http://getcomposer.org/download/) y seguir los siguientes pasos:
 
@@ -260,16 +260,16 @@ Ejecutar todas las pruebas anteriores:
 
     $ composer tests
 
-### Manejador de excepciones
+## Manejador de excepciones
 
 Esta biblioteca utiliza [control de excepciones](src/Exception) que puedes personalizar a tu gusto.
 
-### ☑ Tareas pendientes
+## ☑ Tareas pendientes
 
 - [x] Completar tests
 - [x] Mejorar la documentación
 
-### Contribuir
+## Contribuir
 
 1. Comprobar si hay incidencias abiertas o abrir una nueva para iniciar una discusión en torno a un fallo o función.
 1. Bifurca la rama del repositorio en GitHub para iniciar la operación de ajuste.
@@ -279,15 +279,15 @@ Esta biblioteca utiliza [control de excepciones](src/Exception) que puedes perso
 
 Esto está pensado para proyectos grandes y de larga duración.
 
-### Repositorio
+## Repositorio
 
 Los archivos de este repositorio se crearon y subieron automáticamente con [Reposgit Creator](https://github.com/Josantonius/BASH-Reposgit).
 
-### Licencia
+## Licencia
 
 Este proyecto está licenciado bajo **licencia MIT**. Consulta el archivo [LICENSE](LICENSE) para más información.
 
-### Copyright
+## Copyright
 
 2016 - 2017 Josantonius, [josantonius.com](https://josantonius.com/)
 
