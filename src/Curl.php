@@ -8,10 +8,7 @@
  * @link      https://github.com/Josantonius/PHP-Curl
  * @since     1.0.0
  */
-
 namespace Josantonius\Curl;
-
-use Josantonius\Curl\Exception\CurlException;
 
 /**
  * Curl handler.
@@ -28,14 +25,12 @@ class Curl
      * @var string
      */
     protected static $defaultParams = [
-
-        'data'    => '',
-        'type'    => 'get',
+        'data' => '',
+        'type' => 'get',
         'referer' => null,
         'timeout' => 30,
-        'headers' => array('Content-Type:text/html'),
-        'agent'   => 'Mozilla/5.0 (Windows NT 5.1; rv:31.0) ' .
-        'Gecko/20100101 Firefox/31.0',
+        'headers' => ['Content-Type:text/html'],
+        'agent' => 'Mozilla/5.0 (Windows NT 5.1; rv:31.0) Gecko/20100101 Firefox/31.0',
     ];
 
     /**
@@ -45,13 +40,13 @@ class Curl
      *
      * @param string $url → url when get content
      *
-     * @param  array  $params
-     *         string $params['referer'] → the referrer URL
-     *         int    $params['timeout'] → timeout
-     *         string $params['agent']   → useragent
-     *         array  $params['headers'] → HTTP headers
-     *         array  $params['data']    → parameters to send
-     *         string $params['type']    → type of request
+     * @param array $params
+     *                      string $params['referer'] → the referrer URL
+     *                      int    $params['timeout'] → timeout
+     *                      string $params['agent']   → useragent
+     *                      array  $params['headers'] → HTTP headers
+     *                      array  $params['data']    → parameters to send
+     *                      string $params['type']    → type of request
      *
      * @param string $result → return result as array or object
      *
@@ -65,7 +60,7 @@ class Curl
 
         $params = self::checkParams($params);
 
-        if (!$curl = self::setCurlOptions($params)) {
+        if (! $curl = self::setCurlOptions($params)) {
             return false;
         }
 
@@ -96,10 +91,11 @@ class Curl
         $values = ['data', 'type', 'referer', 'timeout', 'agent', 'headers'];
 
         foreach ($values as $value) {
-            if (!isset($params[$value])) {
+            if (! isset($params[$value])) {
                 $params[$value] = self::$defaultParams[$value];
             }
         }
+
         return $params;
     }
 
@@ -114,18 +110,16 @@ class Curl
      */
     private static function setCurlOptions($param)
     {
-        return in_array($param['type'], ['get', 'post', 'put', 'delete']) ? [
-
-            CURLOPT_VERBOSE        => true,
-            CURLOPT_REFERER        => $param['referer'] ?: self::getUrl(),
-            CURLOPT_TIMEOUT        => $param['timeout'],
-            CURLOPT_USERAGENT      => $param['agent'],
-            CURLOPT_HTTPHEADER     => $param['headers'],
+        return in_array($param['type'], ['get', 'post', 'put', 'delete'], true) ? [
+            CURLOPT_VERBOSE => true,
+            CURLOPT_REFERER => $param['referer'] ?: self::getUrl(),
+            CURLOPT_TIMEOUT => $param['timeout'],
+            CURLOPT_USERAGENT => $param['agent'],
+            CURLOPT_HTTPHEADER => $param['headers'],
             CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_POST           => in_array($param['type'], ['post', 'put']),
-            CURLOPT_POSTFIELDS     => json_encode($param['data']) ?: null,
-            CURLOPT_CUSTOMREQUEST  => strtoupper($param['type']),
-
+            CURLOPT_POST => in_array($param['type'], ['post', 'put'], true),
+            CURLOPT_POSTFIELDS => json_encode($param['data']) ?: null,
+            CURLOPT_CUSTOMREQUEST => strtoupper($param['type']),
         ] : false;
     }
 
@@ -141,6 +135,7 @@ class Curl
         if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
             return 'https://' . $_SERVER['HTTP_HOST'];
         }
+
         return 'http://' . $_SERVER['HTTP_HOST'];
     }
 }

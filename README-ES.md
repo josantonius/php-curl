@@ -14,7 +14,6 @@ Biblioteca PHP para hacer peticiones HTTP a través de CURL. Fácil integración
 - [Cómo empezar](#cómo-empezar)
 - [Uso](#uso)
 - [Tests](#tests)
-- [Manejador de excepciones](#manejador-de-excepciones)
 - [Tareas pendientes](#-tareas-pendientes)
 - [Contribuir](#contribuir)
 - [Repositorio](#repositorio)
@@ -55,9 +54,9 @@ Métodos disponibles en esta biblioteca:
 
 ### - Realizar petición HTTP:
 
-???php
+```php
 Curl::request($url, $params, $result);
-???
+```
 
 | Atributo | Descripción | Tipo | Requerido | Predeterminado
 | --- | --- | --- | --- | --- |
@@ -83,19 +82,19 @@ Curl::request($url, $params, $result);
 
 Para utilizar esta clase con `Composer`:
 
-???php
+```php
 require __DIR__ . '/vendor/autoload.php';
 
 use Josantonius\Curl\Curl;
-???
+```
 
 Si la instalaste `manualmente`, utiliza:
 
-???php
+```php
 require_once __DIR__ . '/Curl.php';
 
 use Josantonius\Curl\Curl;
-???
+```
 
 ## Uso
 
@@ -103,41 +102,41 @@ Ejemplo de uso para esta biblioteca:
 
 ### - Enviar petición GET y obtener respuesta como array:
 
-???php
+```php
 Curl::request('https://graph.facebook.com/zuck');
-???
+```
 
 ### - Enviar petición GET y obtener respuesta como objeto:
 
-???php
+```php
 Curl::request('https://graph.facebook.com/zuck', false, 'object');
-???
+```
 
 ### - Enviar petición GET con parámetros y obtener respuesta como array:
 
-???php
+```php
 $data = [
     'timeout' => 10,
     'referer' => 'http://site.com',
 ];
         
 Curl::request('https://graph.facebook.com/zuck', $data);
-???
+```
 
 ### - Enviar petición GET con parámetros y obtener respuesta como objeto:
 
-???php
+```php
 $data = [
     'timeout' => 10,
     'referer' => 'http://site.com',
 ];
         
 Curl::request('https://graph.facebook.com/zuck', $data, 'object');
-???
+```
 
 ### - Enviar petición POST y obtener respuesta como array:
 
-???php
+```php
 $data = [
     'type'    => 'post',
     'data'    => array('user' => '123456', 'password' => 'xxxxx'),
@@ -150,11 +149,11 @@ $data = [
 ];
         
 Curl::request('https://graph.facebook.com/zuck', $data);
-???
+```
 
 ### - Enviar petición POST y obtener respuesta como objeto:
 
-???php
+```php
 $data = [
     'type'    => 'post',
     'data'    => array('user' => '123456', 'password' => 'xxxxx'),
@@ -167,11 +166,11 @@ $data = [
 ];
         
 Curl::request('https://graph.facebook.com/zuck', $data, 'object');
-???
+```
 
 ### - Enviar petición PUT y obtener respuesta como array:
 
-???php
+```php
 $data = [
     'type'    => 'put',
     'data'    => array('email' => 'new@email.com'),
@@ -184,11 +183,11 @@ $data = [
 ];
         
 Curl::request('https://graph.facebook.com/zuck', $data);
-???
+```
 
 ### - Enviar petición PUT y obtener respuesta como objeto:
 
-???php
+```php
 $data = [
     'type'    => 'put',
     'data'    => array('email' => 'new@email.com'),
@@ -201,11 +200,11 @@ $data = [
 ];
         
 Curl::request('https://graph.facebook.com/zuck', $data, 'object');
-???
+```
 
 ### - Enviar petición DELETE y obtener respuesta como array:
 
-???php
+```php
 $data = [
 
     'type'    => 'delete',
@@ -219,11 +218,11 @@ $data = [
 ];
         
 Curl::request('https://graph.facebook.com/zuck', $data);
-???
+```
 
 ### - Enviar petición DELETE y obtener respuesta como objeto:
 
-???php
+```php
 $data = [
     'type'    => 'delete',
     'data'    => ['userId' => 10],
@@ -236,7 +235,7 @@ $data = [
 ];
         
 Curl::request('https://graph.facebook.com/zuck', $data, 'object');
-???
+```
 
 ## Tests 
 
@@ -256,32 +255,39 @@ Ejecutar pruebas de estándares de código [PSR2](http://www.php-fig.org/psr/psr
 
     $ composer phpcs
 
+Ejecutar pruebas con [PHP Mess Detector](https://phpmd.org/) para detectar inconsistencias en el estilo de codificación:
+
+    $ composer phpmd
+
 Ejecutar todas las pruebas anteriores:
 
     $ composer tests
 
-## Manejador de excepciones
-
-Esta biblioteca utiliza [control de excepciones](src/Exception) que puedes personalizar a tu gusto.
-
 ## ☑ Tareas pendientes
 
-- [x] Completar tests
-- [x] Mejorar la documentación
+- [ ] Añadir nueva funcionalidad
+- [ ] Mejorar pruebas
+- [ ] Mejorar documentación
+- [ ] Refactorizar código
 
 ## Contribuir
 
-1. Comprobar si hay incidencias abiertas o abrir una nueva para iniciar una discusión en torno a un fallo o función.
-1. Bifurca la rama del repositorio en GitHub para iniciar la operación de ajuste.
-1. Escribe una o más pruebas para la nueva característica o expón el error.
-1. Haz cambios en el código para implementar la característica o reparar el fallo.
-1. Envía pull request para fusionar los cambios y que sean publicados.
+Si deseas colaborar, puedes echar un vistazo a la lista de
+[issues](https://github.com/Josantonius/PHP-Curl/issues) o [tareas pendientes](#-tareas-pendientes).
 
-Esto está pensado para proyectos grandes y de larga duración.
+**Pull requests**
+
+* [Fork and clone](https://help.github.com/articles/fork-a-repo).
+* Ejecuta el comando `composer install` para instalar dependencias.
+  Esto también instalará las [dependencias de desarrollo](https://getcomposer.org/doc/03-cli.md#install).
+* Ejecuta el comando `composer fix` para estandarizar el código.
+* Ejecuta las [pruebas](#tests).
+* Crea una nueva rama (**branch**), **commit**, **push** y envíame un
+  [pull request](https://help.github.com/articles/using-pull-requests).
 
 ## Repositorio
 
-Los archivos de este repositorio se crearon y subieron automáticamente con [Reposgit Creator](https://github.com/Josantonius/BASH-Reposgit).
+La estructura de archivos de este repositorio se creó con [PHP-Skeleton](https://github.com/Josantonius/PHP-Skeleton).
 
 ## Licencia
 
@@ -289,7 +295,7 @@ Este proyecto está licenciado bajo **licencia MIT**. Consulta el archivo [LICEN
 
 ## Copyright
 
-2016 - 2017 Josantonius, [josantonius.com](https://josantonius.com/)
+2017 Josantonius, [josantonius.com](https://josantonius.com/)
 
 Si te ha resultado útil, házmelo saber :wink:
 

@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## 1.1.5 - 2017-11-08
+
+* Implemented `PHP Mess Detector` to detect inconsistencies in code styles.
+
+* Implemented `PHP Code Beautifier and Fixer` to fixing errors automatically.
+
+* Implemented `PHP Coding Standards Fixer` to organize PHP code automatically according to PSR standards.
+
+* Deleted `Josantonius\Curl\Exception\CurlException` class.
+* Deleted `Josantonius\Curl\Exception\Exceptions` abstract class.
+* Deleted `Josantonius\Curl\Exception\CurlException->__construct()` method.
+
 ## 1.1.4 - 2017-10-25
 
 * Implemented `PSR-4 autoloader standard` from all library files.

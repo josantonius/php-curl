@@ -15,6 +15,7 @@
         <server name='HTTPS'     value='' />
         <server name='HTTP_HOST' value='site.com' />
     </php>
+    
     <testsuites>
         <testsuite name="Test Suite">
             <directory>tests</directory>
@@ -26,4 +27,5 @@
             <directory>src</directory>
         </whitelist>
     </filter>
+
 </phpunit>
