@@ -3,7 +3,7 @@
  * API Requests using the HTTP protocol through the Curl library.
  *
  * @author    Josantonius <hello@josantonius.com>
- * @copyright 2016 - 2017 (c) Josantonius - PHP-Curl
+ * @copyright 2016 - 2018 (c) Josantonius - PHP-Curl
  * @license   https://opensource.org/licenses/MIT - The MIT License (MIT)
  * @link      https://github.com/Josantonius/PHP-Curl
  * @since     1.1.4
@@ -14,8 +14,6 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * Tests class for Curl library.
- *
- * @since 1.1.4
  */
 final class CurlTest extends TestCase
 {
@@ -41,38 +39,48 @@ final class CurlTest extends TestCase
     }
 
     /**
-     * Send GET request and obtain response as array.
+     * Check if it is an instance.
      *
-     * @since 1.1.4
+     * @since 1.1.5
+     */
+    public function testIsInstanceOf()
+    {
+        $this->assertInstanceOf('Josantonius\Curl\Curl', $this->Curl);
+    }
+
+    /**
+     * Send GET request and obtain response as array.
      */
     public function testGetRequestArray()
     {
+        $curl = $this->Curl;
+
         $this->assertInternalType(
             'array',
-            $this->Curl->request('https://graph.facebook.com/zuck')
+            $curl::request('https://graph.facebook.com/zuck')
         );
     }
 
     /**
      * Send GET request and obtain response as object.
-     *
-     * @since 1.1.4
      */
     public function testGetRequestObject()
     {
+        $curl = $this->Curl;
+
         $this->assertInternalType(
             'object',
-            $this->Curl->request('https://graph.facebook.com/zuck', false, 'object')
+            $curl::request('https://graph.facebook.com/zuck', false, 'object')
         );
     }
 
     /**
      * Send GET request with params and obtain response as array.
-     *
-     * @since 1.1.4
      */
     public function testGetRequestWithParamsArray()
     {
+        $curl = $this->Curl;
+
         $data = [
             'timeout' => 10,
             'referer' => 'http://site.com',
@@ -80,17 +88,17 @@ final class CurlTest extends TestCase
 
         $this->assertInternalType(
             'array',
-            $this->Curl->request('https://graph.facebook.com/zuck', $data)
+            $curl::request('https://graph.facebook.com/zuck', $data)
         );
     }
 
     /**
      * Send GET request with params and obtain response as object.
-     *
-     * @since 1.1.4
      */
     public function testGetRequestWithParamsObject()
     {
+        $curl = $this->Curl;
+
         $data = [
             'timeout' => 10,
             'referer' => 'http://site.com',
@@ -98,27 +106,27 @@ final class CurlTest extends TestCase
 
         $this->assertInternalType(
             'object',
-            $this->Curl->request('https://graph.facebook.com/zuck', $data, 'object')
+            $curl::request('https://graph.facebook.com/zuck', $data, 'object')
         );
     }
 
     /**
      * Send wrong GET request.
-     *
-     * @since 1.1.4
      */
     public function testGetRequestError()
     {
-        $this->assertFalse($this->Curl->request('https://xxx.xxx.com'));
+        $curl = $this->Curl;
+
+        $this->assertFalse($curl::request('https://xxx.xxx.com'));
     }
 
     /**
      * Send POST request and obtain response as array.
-     *
-     * @since 1.1.4
      */
     public function testPostRequestArray()
     {
+        $curl = $this->Curl;
+
         $data = [
             'type' => 'post',
             'data' => ['user' => '123456', 'password' => 'xxxxx'],
@@ -132,17 +140,17 @@ final class CurlTest extends TestCase
 
         $this->assertInternalType(
             'array',
-            $this->Curl->request('https://graph.facebook.com/zuck', $data)
+            $curl::request('https://graph.facebook.com/zuck', $data)
         );
     }
 
     /**
      * Send POST request and obtain response as object.
-     *
-     * @since 1.1.4
      */
     public function testPostRequestObject()
     {
+        $curl = $this->Curl;
+
         $data = [
             'type' => 'post',
             'data' => ['user' => '123456', 'password' => 'xxxxx'],
@@ -156,17 +164,17 @@ final class CurlTest extends TestCase
 
         $this->assertInternalType(
             'object',
-            $this->Curl->request('https://graph.facebook.com/zuck', $data, 'object')
+            $curl::request('https://graph.facebook.com/zuck', $data, 'object')
         );
     }
 
     /**
      * Send wrong POST request.
-     *
-     * @since 1.1.4
      */
     public function testPostRequestError()
     {
+        $curl = $this->Curl;
+
         $data = [
             'type' => 'post',
             'data' => ['user' => '123456', 'password' => 'xxxxx'],
@@ -178,16 +186,16 @@ final class CurlTest extends TestCase
             ],
         ];
 
-        $this->assertFalse($this->Curl->request('https://xxx.xxx.com', $data));
+        $this->assertFalse($curl::request('https://xxx.xxx.com', $data));
     }
 
     /**
      * Send PUT request and obtain response as array.
-     *
-     * @since 1.1.4
      */
     public function testPutRequestArray()
     {
+        $curl = $this->Curl;
+
         $data = [
             'type' => 'put',
             'data' => ['email' => 'new@email.com'],
@@ -201,17 +209,17 @@ final class CurlTest extends TestCase
 
         $this->assertInternalType(
             'array',
-            $this->Curl->request('https://graph.facebook.com/zuck', $data)
+            $curl::request('https://graph.facebook.com/zuck', $data)
         );
     }
 
     /**
      * Send PUT request and obtain response as object.
-     *
-     * @since 1.1.4
      */
     public function testPutRequestObject()
     {
+        $curl = $this->Curl;
+
         $data = [
             'type' => 'put',
             'data' => ['email' => 'new@email.com'],
@@ -225,17 +233,17 @@ final class CurlTest extends TestCase
 
         $this->assertInternalType(
             'object',
-            $this->Curl->request('https://graph.facebook.com/zuck', $data, 'object')
+            $curl::request('https://graph.facebook.com/zuck', $data, 'object')
         );
     }
 
     /**
      * Send wrong PUT request.
-     *
-     * @since 1.1.4
      */
     public function testPutRequestError()
     {
+        $curl = $this->Curl;
+
         $data = [
             'type' => 'put',
             'data' => ['user' => '123456', 'password' => 'xxxxx'],
@@ -247,16 +255,16 @@ final class CurlTest extends TestCase
             ],
         ];
 
-        $this->assertFalse($this->Curl->request('https://xxx.xxx.com', $data));
+        $this->assertFalse($curl::request('https://xxx.xxx.com', $data));
     }
 
     /**
      * Send DELETE request and obtain response as array.
-     *
-     * @since 1.1.4
      */
     public function testDeleteRequestArray()
     {
+        $curl = $this->Curl;
+
         $data = [
             'type' => 'delete',
             'data' => ['userId' => 10],
@@ -270,17 +278,17 @@ final class CurlTest extends TestCase
 
         $this->assertInternalType(
             'array',
-            $this->Curl->request('https://graph.facebook.com/zuck', $data)
+            $curl::request('https://graph.facebook.com/zuck', $data)
         );
     }
 
     /**
      * Send DELETE request and obtain response as object.
-     *
-     * @since 1.1.4
      */
     public function testDeleteRequestObject()
     {
+        $curl = $this->Curl;
+
         $data = [
             'type' => 'delete',
             'data' => ['userId' => 10],
@@ -294,17 +302,17 @@ final class CurlTest extends TestCase
 
         $this->assertInternalType(
             'object',
-            $this->Curl->request('https://graph.facebook.com/zuck', $data, 'object')
+            $curl::request('https://graph.facebook.com/zuck', $data, 'object')
         );
     }
 
     /**
      * Send wrong DELETE request.
-     *
-     * @since 1.1.4
      */
     public function testDeleteRequestError()
     {
+        $curl = $this->Curl;
+
         $data = [
             'type' => 'delete',
             'data' => ['user' => '123456', 'password' => 'xxxxx'],
@@ -316,16 +324,16 @@ final class CurlTest extends TestCase
             ],
         ];
 
-        $this->assertFalse($this->Curl->request('https://xxx.xxx.com', $data));
+        $this->assertFalse($curl::request('https://xxx.xxx.com', $data));
     }
 
     /**
      * Send wrong DELETE request.
-     *
-     * @since 1.1.4
      */
     public function testTypeRequestError()
     {
+        $curl = $this->Curl;
+
         $data = [
             'type' => '¿?¿?¿?',
             'data' => ['user' => '123456', 'password' => 'xxxxx'],
@@ -338,7 +346,7 @@ final class CurlTest extends TestCase
         ];
 
         $this->assertFalse(
-            $this->Curl->request('https://graph.facebook.com/zuck', $data)
+            $curl::request('https://graph.facebook.com/zuck', $data)
         );
     }
 }

@@ -3,7 +3,7 @@
  * API Requests using the HTTP protocol through the Curl library.
  *
  * @author    Josantonius <hello@josantonius.com>
- * @copyright 2016 - 2017 (c) Josantonius - PHP-Curl
+ * @copyright 2016 - 2018 (c) Josantonius - PHP-Curl
  * @license   https://opensource.org/licenses/MIT - The MIT License (MIT)
  * @link      https://github.com/Josantonius/PHP-Curl
  * @since     1.0.0
@@ -12,8 +12,6 @@ namespace Josantonius\Curl;
 
 /**
  * Curl handler.
- *
- * @since 1.0.0
  */
 class Curl
 {
@@ -35,8 +33,6 @@ class Curl
 
     /**
      * Make request and get response website.
-     *
-     * @since 1.0.0
      *
      * @param string $url → url when get content
      *
@@ -125,8 +121,6 @@ class Curl
 
     /**
      * Check the protocol site (http | https) and get the current url.
-     *
-     * @since 1.0.0
      *
      * @return string → full url
      */
