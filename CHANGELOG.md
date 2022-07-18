@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.7 - 2022-07-18
+
+The repository was archived.
+
 ## 1.1.6 - 2018-01-05
 
 * The tests were fixed.
@@ -45,7 +49,7 @@
 * Unit tests supported by `PHPUnit` were added.
 
 * The repository was synchronized with Travis CI to implement continuous integration.
- 
+
 * Added `Curl/src/bootstrap.php` file
 
 * Added `Curl/tests/bootstrap.php` file.
